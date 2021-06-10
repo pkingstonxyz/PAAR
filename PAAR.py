@@ -30,3 +30,6 @@ with open('ConfigFiles.csv', mode='r') as conffile:
         move_config_file(conf_entry[0], conf_entry[1])
 
 # Move/Copy wallpapers
+os.system("mkdir ~/.mystuff")
+os.system("mkdir ~/.mystuff/wallpapers")
+os.system("cp -r  ./wallpapers/ ~/.mystuff/wallpapers/")

@@ -3,3 +3,4 @@
 ./configfiles/plug.vim,~/.local/share/nvim/site/autoload/plug.vim
 ./configfiles/init.vim,~/.config/nvim/init.vim
 ./configfiles/Xresources,~/.Xresources
+./configfiles/fehbg,~/.fehbg
