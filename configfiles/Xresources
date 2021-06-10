@@ -1,0 +1,12 @@
+xterm*faceName: RobotoMono-Regular
+xterm*faceSize: 14
+
+XTerm*background: #1A1B26
+XTerm*foreground: #D2D2D2
+XTerm*borderColor: #343434
+
+!Turning off scrollbar
+XTerm*scrollBar: off
+
+!Starting up with a geometry
+XTerm*vt100*geometry: 88x24

@@ -1,0 +1,5 @@
+./configfiles/zshrc,~/.zshrc
+./configfiles/sxhkdrc,~/.config/sxhkd/sxhkdrc
+./configfiles/plug.vim,~/.local/share/nvim/site/autoload/plug.vim
+./configfiles/init.vim,~/.config/nvim/init.vim
+./configfiles/Xresources,~/.Xresources
