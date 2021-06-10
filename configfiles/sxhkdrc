@@ -62,10 +62,6 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
-
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
@@ -131,3 +127,8 @@ super + o + {q,v,d,s,b,k,g}
 #Checking battery Status
 super + c
 	acpi -V | grep -m 11 Battery | dmenu && sensors | grep CPU: | dmenu
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }n
+	bspc node -f {next,prev}.local.!hidden.window
+
