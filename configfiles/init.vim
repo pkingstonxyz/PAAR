@@ -40,7 +40,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'vim-syntastic/syntastic'
 
 	Plug 'nvie/vim-flake8'
-	
+
 	Plug 'lervag/vimtex'
 
 call plug#end()
@@ -63,9 +63,4 @@ au BufNewFile,BufRead *.html, *.css, *.js
 	\ set tabstop=2
 	\ set softtabstop=2
 	\ set shiftwidth=2
-au BufNewFile,BufRead *.md, *.tex
-	\ set tabstop=2
-	\ set softtabstop=2
-	\ set expandtab
-	\ set shiftwidth=2
-	\ set smarttab
+au BufNewFile,BufRead *.tex set tabstop=3 softtabstop=3 shiftwidth=3 expandtab

@@ -16,7 +16,9 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-PROMPT='%F{9}p%F{214}a%F{220}t%F{40}r%F{111}i%F{90}c%F{129}k%F{15}[%2~]$ '
 source ~/.zprofile
+cd ~
+PROMPT='%F{9}p%F{214}a%F{220}t%F{40}r%F{111}i%F{90}c%F{129}k%F{15}[%2~]$ '
 
 alias ls="ls -1 --color=auto --group-directories-first"
+alias steam="prime-run steam"
