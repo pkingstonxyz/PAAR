@@ -40,6 +40,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'vim-syntastic/syntastic'
 
 	Plug 'nvie/vim-flake8'
+	
+	Plug 'lervag/vimtex'
 
 call plug#end()
 
