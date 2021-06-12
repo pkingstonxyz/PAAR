@@ -63,9 +63,9 @@ au BufNewFile,BufRead *.html, *.css, *.js
 	\ set tabstop=2
 	\ set softtabstop=2
 	\ set shiftwidth=2
-au BufNewFile,BufRead *.md
-	\ set tabstop=4
+au BufNewFile,BufRead *.md, *.tex
+	\ set tabstop=2
 	\ set softtabstop=2
 	\ set expandtab
-	\ set shiftwidth=4
+	\ set shiftwidth=2
 	\ set smarttab
