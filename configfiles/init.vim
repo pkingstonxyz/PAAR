@@ -1,3 +1,9 @@
+"
+"Normal nvim config
+"
+"
+set nocompatible
+
 "Sets up my prefered numbering
 set relativenumber
 set number
@@ -5,8 +11,14 @@ set number
 "Sets up my encoding
 set encoding=utf-8
 
-"Formatting and latex
+"Formatting
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 filetype plugin indent on
+set colorcolumn=80
+
+"Latex stuff
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 au BufWinLeave *.* mkview
@@ -17,6 +29,17 @@ syntax enable
 set background=dark
 set t_co=256
 
+"Template configuration
+augroup templates
+	autocmd BufNewFile *.md 0r ~/.config/nvim/skeletons/skeleton.md
+augroup END
+
+"Sets up automatic building for aoan
+autocmd BufWritePost aoan.md !./makeaoan
+
+"
+" Plugins
+"
 call plug#begin('~/.config/nvim/plugged')
 	
 	Plug 'preservim/nerdtree'
@@ -35,13 +58,17 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'vim-scripts/indentpython.vim'
 
-	Plug 'Valloric/YouCompleteMe'
-
 	Plug 'vim-syntastic/syntastic'
 
 	Plug 'nvie/vim-flake8'
 
 	Plug 'lervag/vimtex'
+
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+
+	Plug 'Valloric/YouCompleteMe'
+
+	Plug 'othree/xml.vim'
 
 call plug#end()
 
@@ -58,9 +85,3 @@ let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
 let g:llightline = {'colorscheme': 'tokyonight'}
-
-au BufNewFile,BufRead *.html, *.css, *.js
-	\ set tabstop=2
-	\ set softtabstop=2
-	\ set shiftwidth=2
-au BufNewFile,BufRead *.tex set tabstop=3 softtabstop=3 shiftwidth=3 expandtab

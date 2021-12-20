@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill --randomize '/home/patrick/.mystuff/wallpapers/*' 
+feh --no-fehbg --bg-fill --randomize ~/.mystuff/wallpapers/*

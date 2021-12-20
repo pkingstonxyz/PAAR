@@ -8,3 +8,5 @@ Configured xorg server
  - bspwm installation
  - sxhkd installation
  - python
+
+This ought to get you up and running for my configuration.
