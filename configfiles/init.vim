@@ -64,15 +64,17 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'vim-scripts/indentpython.vim'
 
-	Plug 'vim-syntastic/syntastic'
+"	Plug 'vim-syntastic/syntastic'
 
 	Plug 'nvie/vim-flake8'
 
 	Plug 'lervag/vimtex'
 
-"	Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 
-	Plug 'Valloric/YouCompleteMe'
+"	Plug 'Valloric/YouCompleteMe'
+
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 	Plug 'othree/xml.vim'
 
@@ -89,6 +91,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'luochen1990/rainbow'
 
 	Plug 'Raimondi/delimitMate'
+
+	Plug 'elixir-editors/vim-elixir'
+
 call plug#end()
 
 "NerdTree config
@@ -107,3 +112,22 @@ let g:llightline = {'colorscheme': 'tokyonight'}
 
 "Rainbow on
 let g:rainbow_active = 1
+
+"coc tab completion
+set hidden
+set updatetime=300
+set cmdheight=1
+set shortmess+=c
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ CheckBackspace() ? "\<TAB>" :
+	\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+"coc code actions
+noremap ca :CocAction<CR>
