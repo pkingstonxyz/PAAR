@@ -64,7 +64,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'vim-scripts/indentpython.vim'
 
-"	Plug 'vim-syntastic/syntastic'
+	Plug 'vim-syntastic/syntastic'
 
 	Plug 'nvie/vim-flake8'
 
@@ -78,9 +78,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'othree/xml.vim'
 
-	Plug 'othree/jsdoc-syntax.vim'
+"	Plug 'othree/jsdoc-syntax.vim'
 
-	Plug 'MaxMEllon/vim-jsx-pretty'
+"	Plug 'MaxMEllon/vim-jsx-pretty'
 
 	Plug 'rhysd/vim-grammarous'
 
@@ -94,7 +94,36 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'elixir-editors/vim-elixir'
 
+	Plug 'vimwiki/vimwiki'
+
+	"Plug 'Olical/conjure'
+
+	"Plug 'tpope/vim-dispatch'
+
+	"Plug 'clojure-vim/vim-jack-in'
+
+	"Plug 'radenling/vim-dispatch-neovim'
+	
+	Plug 'ctrlpvim/ctrlp.vim'
+
+	Plug 'guns/vim-sexp', {'for': 'clojure'}
+
+	Plug 'tpope/vim-sexp-mappings-for-regular-people'
+
+	Plug 'tpope/vim-repeat'
+
+	Plug 'tpope/vim-surround'
+
+	Plug 'liquidz/vim-iced', {'for': 'clojure'}
+
+	Plug 'mlochbaum/BQN', {'rtp': 'editors/vim'}
+
+	Plug 'github/copilot.vim'
+
 call plug#end()
+
+" Use vim iced config
+let g:iced_enable_default_key_mappings = v:true
 
 "NerdTree config
 noremap <leader>n :NERDTreeFocus<CR>
@@ -131,3 +160,27 @@ endfunction
 
 "coc code actions
 noremap ca :CocAction<CR>
+
+"Vimwiki setup
+let wiki = {}
+let wiki.path = '~/Projects/wiki/'
+let wiki.auto_toc = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_list = [wiki]
+autocmd BufRead,BufNewFile *.wiki setlocal spell
+
+" Setup for J
+if exists("did_load_filetypes")
+  finish
+endif
+augroup filetypedetect
+  au! BufRead,BufNewFile *.ijs,*.ijt,*.ijp,*.ijx        setfiletype j
+augroup END
+
+"Carp setup
+let g:syntastic_carp_checkers = ['carp']
+au FileType carp set lisp
+
+"BQN setup
+au! BufRead,BufNewFile *.bqn setf bqn
+au! BufRead,BufNewFile * if getline(1) =~ '^#!.*bqn$' | setf bqn | endif

@@ -4,3 +4,4 @@
 ./configfiles/init.vim,~/.config/nvim/init.vim
 ./configfiles/Xresources,~/.Xresources
 ./configfiles/fehbg,~/.fehbg
+./configfiles/kitty.conf,~/.config/kitty/kitty.conf
